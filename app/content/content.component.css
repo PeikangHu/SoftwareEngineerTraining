@@ -1,0 +1,87 @@
+#runButton
+{
+	position: fixed;
+	bottom: 20px;
+	right: 15px;
+	z-index: 888;
+
+	width: 50px;
+	height: 50px;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+}
+
+/* Specify styling for tooltip contents */
+.tooltip.customClass .tooltip-inner {
+	color: #880000;
+	background-color: #ffff66;
+	box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+/* Hide arrow */
+.tooltip.customClass .tooltip-arrow {
+	display: none;
+}
+
+#stepTitle
+{
+	margin-left: 10px;
+	font-size: 15px;
+}
+
+.realCode
+{
+	margin-left: 20px;
+}
+
+@media(min-width:768px) {
+	#stepTitle
+	{
+		margin-left: 10px;
+		font-size: 20px;
+	}
+}
+
+.dropdown-menu
+{
+	min-width: 120px;
+
+}
+
+.list-group
+{
+	margin-bottom: 0px;
+}
+
+.snippet
+{
+	list-style-type: none;
+	display: inline-block;
+	margin-right: 10px;
+	margin-bottom: 0px;
+}
+
+.dnd-drag-start {
+	-moz-transform:scale(0.8);
+	-webkit-transform:scale(0.8);
+	transform:scale(0.8);
+	opacity:0.7;
+	border: 2px dashed #000;
+}
+
+.dnd-drag-enter {
+	opacity:0.7;
+	border: 2px dashed #000;
+}
+
+.dnd-drag-over {
+	border: 2px dashed #000;
+}
+
+.dnd-sortable-drag {
+	-moz-transform:scale(0.9);
+	-webkit-transform:scale(0.9);
+	transform:scale(0.9);
+	opacity:0.7;
+	border: 1px dashed #000;
+}

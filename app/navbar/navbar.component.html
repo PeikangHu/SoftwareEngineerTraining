@@ -1,0 +1,34 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle btn navbar-btn" (click)="showMenuToggled($event)">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/#">Software Engineer Training</a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse" [collapse]="isNavCollapsed">
+			<ul class="nav navbar-nav">
+				<li><a href="#" >Subscribe</a></li>
+				<li><a href="#" >Tasks</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<!-- Single button with keyboard nav -->
+				<div id="profile" class="btn-group" dropdown keyboardNav="true">
+					<button id="simple-btn-keyboard-nav" type="button" class="btn btn-link" dropdownToggle>
+						Peter <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" dropdownMenu role="menu" aria-labelledby="simple-btn-keyboard-nav">
+						<li role="menuitem"><a class="dropdown-item" href="#">Profile</a></li>
+						<li role="menuitem"><a class="dropdown-item" href="#">My Subscription</a></li>
+						<li role="separator" class="divider"></li>
+						<li role="menuitem"><a class="dropdown-item" href="#">Sign Out</a></li>
+					</ul>
+				</div>
+			</ul>
+		</div>
+		<!--/.navbar-collapse -->
+	</div>
+</div>

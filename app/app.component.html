@@ -1,0 +1,12 @@
+
+
+<phu-navbar></phu-navbar>
+
+<div id="wrapper" [ngClass]="{ toggled: !isShownSidebar }">
+
+
+	<phu-sidebar ([hidden])="!isShownSidebar" id="sidebar-wrapper"></phu-sidebar>
+
+	<phu-content id="page-content-wrapper" (isShownSidebarValueChanged)="onIsShownSidebarValueChanged($event)"></phu-content>
+</div>
+<!-- /#wrapper -->
