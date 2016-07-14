@@ -16,9 +16,8 @@ var ng2_dragula_1 = require("ng2-dragula/ng2-dragula");
  * Created by peikanghu on 7/11/16.
  */
 var ContentComponent = (function () {
-    function ContentComponent(snippetService, dragulaService) {
+    function ContentComponent(snippetService) {
         this.snippetService = snippetService;
-        this.dragulaService = dragulaService;
         this._isShownSidebar = true;
         this.stepTitleTooltip = 'Given an array of integers, return indices of the two numbers such that they add up to a specific target. 	You may assume that each input would have exactly one solution.';
         this.dragSnippetTooltip = 'Drag and drop to the bottom left.';
@@ -52,10 +51,11 @@ var ContentComponent = (function () {
             selector: 'phu-content',
             directives: [ng2_bootstrap_1.DROPDOWN_DIRECTIVES, ng2_bootstrap_1.TOOLTIP_DIRECTIVES, ng2_dragula_1.Dragula],
             viewProviders: [ng2_dragula_1.DragulaService],
-            styleUrls: ['app/content/content.component.css'],
-            templateUrl: 'app/content/content.component.html'
+            styleUrls: ['app/content/content.component.css',
+                'node_modules/dragula/dist/dragula.css'],
+            templateUrl: 'app/content/content.component.html',
         }), 
-        __metadata('design:paramtypes', [snippet_service_1.default, ng2_dragula_1.DragulaService])
+        __metadata('design:paramtypes', [snippet_service_1.default])
     ], ContentComponent);
     return ContentComponent;
 }());

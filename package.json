@@ -25,6 +25,7 @@
     "bootstrap": "^3.3.6",
     "core-js": "^2.4.0",
     "dragula": "^3.7.1",
+    "jasmine-core": "^2.4.1",
     "moment": "^2.14.1",
     "ng2-bootstrap": "^1.0.20",
     "ng2-dnd": "^1.8.2",
@@ -36,6 +37,8 @@
   },
   "devDependencies": {
     "concurrently": "^2.0.0",
+    "jasmine": "^2.4.1",
+    "karma-chrome-launcher": "^1.0.1",
     "lite-server": "^2.2.0",
     "typescript": "^1.8.10",
     "typings": "^1.0.4"

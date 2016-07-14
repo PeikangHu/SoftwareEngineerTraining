@@ -11,8 +11,9 @@ import {Dragula, DragulaService} from "ng2-dragula/ng2-dragula";
 	selector: 'phu-content',
 	directives: [DROPDOWN_DIRECTIVES, TOOLTIP_DIRECTIVES, Dragula],
 	viewProviders: [DragulaService],
-	styleUrls: ['app/content/content.component.css'],
-	templateUrl: 'app/content/content.component.html'
+	styleUrls: ['app/content/content.component.css',
+				'node_modules/dragula/dist/dragula.css'],
+	templateUrl: 'app/content/content.component.html',
 })
 
 export default class ContentComponent implements OnInit
@@ -26,8 +27,7 @@ export default class ContentComponent implements OnInit
 	dragSnippetTooltip:string = 'Drag and drop to the bottom left.';
 
 
-	constructor(private snippetService:SnippetService,
-	            private dragulaService: DragulaService) {
+	constructor(private snippetService:SnippetService) {
 
 
 		this.snippets = this.snippetService.snippetStore;
