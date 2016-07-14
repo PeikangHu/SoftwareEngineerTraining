@@ -11,6 +11,14 @@ var SnippetService = (function () {
                 code: "if (num == null) return null;"
             },
             {
+                name: "{",
+                code: "{"
+            },
+            {
+                name: "}",
+                code: "}"
+            },
+            {
                 name: "Check each number.",
                 code: "for (int i = 0; i < nums.Length; i++)"
             },

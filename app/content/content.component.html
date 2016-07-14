@@ -24,11 +24,11 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-success">
-					<div class="panel-body" dnd-sortable-container [dropZones]="['snippet-zone']" [sortableData]="snippets">
-						<ul class="list-group">
+					<div class="panel-body" >
+						<ul class="list-group" [dragula]='"first-bag"' [dragulaModel]='snippets'>
 							<li *ngFor="let snippet of snippets; let i = index"
 							    class="snippet list-group-item"
-							    dnd-sortable [sortableIndex]="i">{{snippet.name}}</li>
+							    >{{snippet.name}}</li>
 						</ul>
 					</div>
 				</div>
@@ -42,13 +42,10 @@
 						function twoSum(numbers, target)
 					</div>
 
-					<div class="panel-body" [dropZones]="['snippet-zone']"
-					     dnd-sortable-container [sortableData]="codes">
-						<ul class="list-group">
+					<div class="panel-body">
+						<ul class="list-group"  [dragula]='"first-bag"' [dragulaModel]='codes'>
 							<li *ngFor="let snippet of codes; let i = index"
-							    class="list-group-item"
-							    dnd-sortable [sortableIndex]="i"
-								>
+							    class="list-group-item">
 								{{snippet.name}}
 							</li>
 						</ul>
