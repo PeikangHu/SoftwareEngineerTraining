@@ -5,5 +5,6 @@ var app_component_1 = require('./app.component');
 /**
  * Created by peikanghu on 7/11/16.
  */
+// ngAria can dynamically support ARIA for accessibility.
 platform_browser_dynamic_1.bootstrap(app_component_1.default);
 //# sourceMappingURL=main.js.map
