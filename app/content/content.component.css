@@ -54,7 +54,7 @@
 	min-height: 20px;
 }
 
-.snippet
+#SnippetContainer .list-group-item
 {
 	list-style-type: none;
 	display: inline-block;

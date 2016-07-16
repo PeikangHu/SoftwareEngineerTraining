@@ -5,7 +5,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<button class="btn" (click)="showSidebarClicked($event)"><span class="glyphicon glyphicon-list"></span></button>
-				<span id="stepTitle" [tooltip]="stepTitleTooltip" tooltipPlacement="bottom">Step 2: Two Sum</span>
+				<span id="stepTitle">Step 2: Two Sum</span> <span class="glyphicon glyphicon-info-sign" [tooltip]="stepTitleTooltip" tooltipPlacement="bottom"></span>
 				<!-- Single button with keyboard nav -->
 				<div id="profile" class="btn-group pull-right" dropdown keyboardNav="true">
 					<button id="simple-btn-keyboard-nav" type="button" class="btn btn-info" dropdownToggle>
@@ -21,13 +21,13 @@
 		</div>
 
 		<!-- Snippet Container -->
-		<div class="row">
+		<div class="row" id="SnippetContainer">
 			<div class="col-lg-12">
 				<div class="panel panel-success">
 					<div class="panel-body" >
 						<ul class="list-group" [dragula]='"first-bag"' [dragulaModel]='snippets'>
 							<li *ngFor="let snippet of snippets; let i = index"
-							    class="snippet list-group-item"
+							    class="list-group-item"
 							    >{{snippet.name}}</li>
 						</ul>
 					</div>
@@ -46,9 +46,8 @@
 
 					<div class="panel-body">
 						<ul class="list-group"  [dragula]='"first-bag"' [dragulaModel]='codes'>
-							<li *ngFor="let snippet of codes; let i = index"
-							    class="list-group-item">
-								{{snippet.name}}
+							<li *ngFor="let code of codes; let i = index" class="list-group-item">
+								{{code.name}}
 							</li>
 						</ul>
 					</div>

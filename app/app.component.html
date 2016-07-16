@@ -2,8 +2,7 @@
 
 <phu-navbar></phu-navbar>
 
-<div id="wrapper" [ngClass]="{ toggled: !isShownSidebar }">
-
+<div id="wrapper" [class.toggled]="!isShownSidebar">
 
 	<phu-sidebar ([hidden])="!isShownSidebar" id="sidebar-wrapper"></phu-sidebar>
 

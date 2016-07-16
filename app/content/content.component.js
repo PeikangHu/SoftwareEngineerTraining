@@ -16,13 +16,14 @@ var ng2_dragula_1 = require("ng2-dragula/ng2-dragula");
  * Created by peikanghu on 7/11/16.
  */
 var ContentComponent = (function () {
-    function ContentComponent(snippetService) {
+    function ContentComponent(snippetService, dragulaService) {
         this.snippetService = snippetService;
+        this.dragulaService = dragulaService;
         this._isShownSidebar = true;
-        this.stepTitleTooltip = 'Given an array of integers, return indices of the two numbers such that they add up to a specific target. 	You may assume that each input would have exactly one solution.';
+        this.stepTitleTooltip = 'Given nums = [2, 7] target = 9 Because nums[0] + nums[1] = 9 return [0, 1].';
         this.dragSnippetTooltip = 'Drag and drop to the bottom left.';
         this.isShownSidebarValueChanged = new core_1.EventEmitter();
-        this.snippets = this.snippetService.snippetStore;
+        this.snippets = [];
         this.codes = [];
     }
     Object.defineProperty(ContentComponent.prototype, "isShownSidebar", {
@@ -33,9 +34,8 @@ var ContentComponent = (function () {
         configurable: true
     });
     ContentComponent.prototype.ngOnInit = function () {
-    };
-    ContentComponent.prototype.allowDrop = function (event) {
-        event.preventDefault();
+        var _this = this;
+        this.snippetService.getSnippets().subscribe(function (snippets) { return _this.snippets = snippets; });
     };
     ContentComponent.prototype.showSidebarClicked = function (event) {
         event.preventDefault();
@@ -51,11 +51,12 @@ var ContentComponent = (function () {
             selector: 'phu-content',
             directives: [ng2_bootstrap_1.DROPDOWN_DIRECTIVES, ng2_bootstrap_1.TOOLTIP_DIRECTIVES, ng2_dragula_1.Dragula],
             viewProviders: [ng2_dragula_1.DragulaService],
+            providers: [snippet_service_1.default],
             styleUrls: ['app/content/content.component.css',
                 'node_modules/dragula/dist/dragula.css'],
             templateUrl: 'app/content/content.component.html',
         }), 
-        __metadata('design:paramtypes', [snippet_service_1.default])
+        __metadata('design:paramtypes', [snippet_service_1.default, ng2_dragula_1.DragulaService])
     ], ContentComponent);
     return ContentComponent;
 }());

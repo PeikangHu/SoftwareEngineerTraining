@@ -11,6 +11,7 @@ import {Dragula, DragulaService} from "ng2-dragula/ng2-dragula";
 	selector: 'phu-content',
 	directives: [DROPDOWN_DIRECTIVES, TOOLTIP_DIRECTIVES, Dragula],
 	viewProviders: [DragulaService],
+	providers: [SnippetService],
 	styleUrls: ['app/content/content.component.css',
 				'node_modules/dragula/dist/dragula.css'],
 	templateUrl: 'app/content/content.component.html',
@@ -23,15 +24,14 @@ export default class ContentComponent implements OnInit
 	snippets:Snippet[];
 	codes:Snippet[];
 
-	stepTitleTooltip:string = 'Given an array of integers, return indices of the two numbers such that they add up to a specific target. 	You may assume that each input would have exactly one solution.';
+	stepTitleTooltip:string = 'Given nums = [2, 7] target = 9 Because nums[0] + nums[1] = 9 return [0, 1].';
 	dragSnippetTooltip:string = 'Drag and drop to the bottom left.';
 
 
-	constructor(private snippetService:SnippetService) {
-
-
-		this.snippets = this.snippetService.snippetStore;
-
+	constructor(private snippetService:SnippetService,
+	            private dragulaService: DragulaService)
+	{
+		this.snippets = [];
 		this.codes = [];
 	}
 
@@ -44,14 +44,7 @@ export default class ContentComponent implements OnInit
 
 	ngOnInit(): void
 	{
-
-	}
-
-
-
-	allowDrop(event)
-	{
-		event.preventDefault();
+		this.snippetService.getSnippets().subscribe(snippets => this.snippets = snippets);
 	}
 
 	showSidebarClicked(event)
